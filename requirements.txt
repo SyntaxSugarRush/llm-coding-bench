@@ -1,0 +1,13 @@
+# Dependencies
+
+- Python >= 3.10
+- openai >= 1.0       — API client
+- evalplus >= 0.3      — HumanEval+ / MBPP+ datasets
+- datasets >= 3.0      — BigCodeBench from HuggingFace
+- matplotlib >= 3.8    — chart generation
+- numpy >= 1.24        — chart math
+
+## Dev dependencies
+
+- pytest >= 7.0
+- ruff >= 0.5

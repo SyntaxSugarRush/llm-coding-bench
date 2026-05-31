@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-coding-bench"
+version = "1.0.0"
+description = "LLM coding benchmark — HumanEval + MBPP + BigCodeBench with SQLite storage and charting"
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "builderz-labs" },
+]
+keywords = ["llm", "benchmark", "humaneval", "mbpp", "bigcodebench", "coding", "evaluation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Testing",
+]
+
+dependencies = [
+    "openai>=1.0",
+    "evalplus>=0.3",
+    "datasets>=3.0",
+    "matplotlib>=3.8",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+llm-bench = "llm_benchmark.bench:main"
+llm-bench-store = "llm_benchmark.store_results:main"
+llm-bench-chart = "llm_benchmark.chart:main"
+llm-bench-init-db = "llm_benchmark.create_db:main"
+
+[project.urls]
+Homepage = "https://github.com/builderz-labs/llm-coding-bench"
+Repository = "https://github.com/builderz-labs/llm-coding-bench"
+Issues = "https://github.com/builderz-labs/llm-coding-bench/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_benchmark"]
